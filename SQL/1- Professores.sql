@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[Professores](
 	[nome] [varchar](150) NOT NULL,
 	[dataCriacao] [datetime] NOT NULL,
 	[operationId] [uniqueidentifier] NOT NULL,
+	[disciplina_id] [bigint] NULL,
 	[salario] [numeric](18, 2) NOT NULL,
  CONSTRAINT [PK_Professor] PRIMARY KEY CLUSTERED 
 (

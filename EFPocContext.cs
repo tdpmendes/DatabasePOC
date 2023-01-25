@@ -28,6 +28,31 @@ namespace EFPoc
             //
             //});
 
+            //modelBuilder.Entity<Aluno>().HasBaseType<EntityBase>();
+            //modelBuilder.Entity<Turma>().HasBaseType<EntityBase>();
+            //modelBuilder.Entity<Professor>().HasBaseType<EntityBase>();
+            //modelBuilder.Entity<Horario>().HasBaseType<EntityBase>();
+            //modelBuilder.Entity<Disciplina>().HasBaseType<EntityBase>();
+
+            //modelBuilder.Entity<Professor>().HasOne<Disciplina>();
+            //modelBuilder.Entity<Disciplina>().HasOne<Professor>();
+
+            //modelBuilder.Entity<Professor>().HasOne<Disciplina>();
+            //modelBuilder.Entity<Disciplina>().HasOne<Professor>();
+
+            //modelBuilder.Entity<Disciplina>(d => d.OwnsOne(p => p.Professor));
+
+            //modelBuilder.Entity<Disciplina>(b =>
+            //{
+            //    b.OwnsOne(e => e.Professor);
+            //    b.Navigation(e => e.Professor);
+            //});
+
+            modelBuilder.Entity<Turma>()
+                            .HasMany(m => m.Alunos)
+                            .WithOne()
+                            .HasForeignKey(m => m.TurmaId);
+
         }
     }
 }

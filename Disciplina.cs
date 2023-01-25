@@ -1,8 +1,13 @@
-﻿namespace EFPoc
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EFPoc
 {
     public class Disciplina : EntityBase
     {
-        public long ProfessorId { get; set; }
+        //[Column("professor_id")]
+        //public long ProfessorId { get; set; }
+
+        public Professor Professor { get; set; }
 
     }
 }

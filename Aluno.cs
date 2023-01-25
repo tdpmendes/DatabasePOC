@@ -5,6 +5,7 @@ namespace EFPoc
 {
     public class Aluno : EntityBase
     {
+        [ForeignKey("TurmaId")]
         [Column("turma_id")]
         public long TurmaId { get; set; }
         [Column("matricula")]

@@ -7,12 +7,17 @@ declare @professorId bigint
 declare @turmaId bigint
 declare @disciplinaId bigint
 
+--drop table Horarios
+--drop table Disciplinas
+--drop table Professores
+--drop table Turmas
+--drop table Alunos
 
-select * from Alunos
-select * from Disciplinas
-select * from Horarios
-select * from Professores
-select * from Turmas
+--delete from Horarios
+--delete from Disciplinas
+--delete from Professores
+--delete from Turmas
+--delete from Alunos
 
 BEGIN TRANSACTION
 
@@ -45,6 +50,8 @@ INSERT INTO [dbo].[Disciplinas]
 
 set @disciplinaId = SCOPE_IDENTITY()
 
+update [dbo].[Professores] set [disciplina_id] = @disciplinaId where id = @professorId
+
 COMMIT TRANSACTION
 
 BEGIN TRANSACTION
@@ -62,7 +69,7 @@ set @turmaId = SCOPE_IDENTITY()
 
 INSERT INTO [dbo].[Alunos]
            ([turma_id]
-           ,[matrcula]
+           ,[matricula]
            ,[nome]
            ,[dataCriacao]
            ,[operationId]
@@ -97,3 +104,9 @@ INSERT INTO [dbo].[Alunos]
            ,'15:00'
            ,1)
 COMMIT TRANSACTION
+
+select * from Alunos
+select * from Disciplinas
+select * from Horarios
+select * from Professores
+select * from Turmas
