@@ -8,7 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Aluno](
+CREATE TABLE [dbo].[Alunos](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[turma_id] [bigint] NOT NULL,
 	[matrcula] [uniqueidentifier] NOT NULL,

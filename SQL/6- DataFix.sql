@@ -8,16 +8,16 @@ declare @turmaId bigint
 declare @disciplinaId bigint
 
 
-select * from Aluno
-select * from Disciplina
-select * from Horario
-select * from Professor
-select * from Turma
+select * from Alunos
+select * from Disciplinas
+select * from Horarios
+select * from Professores
+select * from Turmas
 
 BEGIN TRANSACTION
 
 --1-- Professor
-INSERT INTO [dbo].[Professor]
+INSERT INTO [dbo].[Professores]
            ([nome]
            ,[dataCriacao]
            ,[operationId]
@@ -32,7 +32,7 @@ INSERT INTO [dbo].[Professor]
 
 set @professorId = SCOPE_IDENTITY()
 
-INSERT INTO [dbo].[Disciplina]
+INSERT INTO [dbo].[Disciplinas]
            ([nome]
            ,[dataCriacao]
            ,[operationId]
@@ -49,7 +49,7 @@ COMMIT TRANSACTION
 
 BEGIN TRANSACTION
 
-INSERT INTO [dbo].[Turma]
+INSERT INTO [dbo].[Turmas]
            ([nome]
            ,[dataCriacao]
            ,[operationId])
@@ -60,7 +60,7 @@ INSERT INTO [dbo].[Turma]
 
 set @turmaId = SCOPE_IDENTITY()
 
-INSERT INTO [dbo].[Aluno]
+INSERT INTO [dbo].[Alunos]
            ([turma_id]
            ,[matrcula]
            ,[nome]
@@ -78,7 +78,7 @@ INSERT INTO [dbo].[Aluno]
 		   ,1.40)
 
 
-	 INSERT INTO [dbo].[Horario]
+	 INSERT INTO [dbo].[Horarios]
            ([turma_id]
            ,[disciplina_id]
            ,[nome]

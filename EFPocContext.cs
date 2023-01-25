@@ -18,7 +18,7 @@ namespace EFPoc
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Sempre conferir se a connection string bate com a sua configuracao
-            optionsBuilder.UseSqlServer("Server=tcp:localhost,1433; Initial Catalog=EFPoc; User ID=sa;Password=Xpollens!Pop!2022;");
+            optionsBuilder.UseSqlServer("Server=tcp:localhost,1433; Initial Catalog=EFPoc; User ID=sa;Password=@dm1n1str@t0r");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

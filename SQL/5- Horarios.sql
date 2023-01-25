@@ -8,7 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Horario](
+CREATE TABLE [dbo].[Horarios](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[turma_id] [bigint] NOT NULL,
 	[disciplina_id] [bigint] NOT NULL,
