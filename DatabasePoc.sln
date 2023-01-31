@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFPoc", "EFPoc.csproj", "{69F7B542-6305-40C0-BC82-A6D15408ABC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabasePOC", "DatabasePOC.csproj", "{69F7B542-6305-40C0-BC82-A6D15408ABC5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{E73CCD14-06DA-4139-95F3-81F941FB341D}"
 	ProjectSection(SolutionItems) = preProject
