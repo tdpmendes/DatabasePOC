@@ -5,14 +5,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : EntityBase, new()
     {
-        protected readonly EFPocContext Db;
+        protected readonly DatabasePOCContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        public RepositoryBase(EFPocContext db)
+        public RepositoryBase(DatabasePOCContext db)
         {
             Db = db ?? throw new ArgumentNullException(nameof(db));
             DbSet = db.Set<TEntity>();

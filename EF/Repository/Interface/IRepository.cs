@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : EntityBase
     {

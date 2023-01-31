@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DatabasePOC;
+using Microsoft.EntityFrameworkCore;
 
-namespace EFPoc
+namespace DatabasePOC
 {
-    public class EFPocContext : DbContext
+    public class DatabasePOCContext : DbContext
     {
         public virtual DbSet<Aluno> Alunos { get; set; }
         public virtual DbSet<Disciplina> Disciplinas { get; set; }
@@ -10,7 +11,7 @@ namespace EFPoc
         public virtual DbSet<Professor> Professores { get; set; }
         public virtual DbSet<Turma> Turmas { get; set; }
 
-        public EFPocContext()
+        public DatabasePOCContext()
         {
 
         }
@@ -18,12 +19,12 @@ namespace EFPoc
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Sempre conferir se a connection string bate com a sua configuracao
-            optionsBuilder.UseSqlServer("Server=tcp:localhost,1433; Initial Catalog=EFPoc; User ID=sa;Password=@dm1n1str@t0r");
+            optionsBuilder.UseSqlServer(Constants.ConnectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<EFPoc>(entity =>
+            //modelBuilder.Entity<DatabasePOC>(entity =>
             //{
             //
             //});

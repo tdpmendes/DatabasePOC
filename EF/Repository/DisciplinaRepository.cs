@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public class DisciplinaRepository : RepositoryBase<Disciplina>
     {
-        public DisciplinaRepository(EFPocContext db) : base(db)
+        public DisciplinaRepository(DatabasePOCContext db) : base(db)
         {
         }
 

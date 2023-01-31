@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public class TurmaRepository : RepositoryBase<Turma>
     {
-        public TurmaRepository(EFPocContext db) : base(db)
+        public TurmaRepository(DatabasePOCContext db) : base(db)
         {
         }
 

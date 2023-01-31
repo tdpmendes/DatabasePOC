@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public class HorarioRepository : RepositoryBase<Disciplina>
     {
-        public HorarioRepository(EFPocContext db) : base(db)
+        public HorarioRepository(DatabasePOCContext db) : base(db)
         {
         }
 

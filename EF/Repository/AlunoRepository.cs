@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EFPoc
+﻿namespace DatabasePOC
 {
     public class AlunoRepository : RepositoryBase<Aluno>
     {
-        public AlunoRepository(EFPocContext db) : base(db)
+        public AlunoRepository(DatabasePOCContext db) : base(db)
         {
         }
     }

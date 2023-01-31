@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EFPoc
+namespace DatabasePOC
 {
     public class Turma : EntityBase
     {
