@@ -8,6 +8,8 @@ nupkg/
 # Visual Studio Code
 .vscode
 
+.vs/
+
 # Rider
 .idea
 
@@ -32,3 +34,4 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+/.vs/DatabasePOC/DesignTimeBuild/.dtbcache.v2
