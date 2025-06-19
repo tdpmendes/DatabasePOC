@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace DatabasePOC
+namespace DatabasePOC.EF.Repository.Interface
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : EntityBase
     {
@@ -15,6 +16,6 @@ namespace DatabasePOC
 
         Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
         Task<int> SaveChangesAsync();
-        int DeleteMany(Expression<Func<TEntity, bool>> predicate);
+        Task<int> DeleteManyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
     }
 }

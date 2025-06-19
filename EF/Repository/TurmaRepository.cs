@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace DatabasePOC
@@ -13,7 +13,8 @@ namespace DatabasePOC
         public async Task<IEnumerable<Turma>> GetAllTurmasWithAlunosAsync()
         {
             return await Db.Turmas.AsNoTracking()
-                                  .Include(e => e.Alunos).ToListAsync();
+                                  .Include("Alunos")
+                                  .ToListAsync();
         }
     }
 }

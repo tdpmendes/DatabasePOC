@@ -4,6 +4,8 @@ namespace DatabasePOC
 {
     public class Turma : EntityBase
     {
-        public IList<Aluno> Alunos { get; set; }
+        public virtual ICollection<Horario> Horarios { get; set; }
+
+        public virtual IList<Aluno> Alunos { get; set; }
     }
 }

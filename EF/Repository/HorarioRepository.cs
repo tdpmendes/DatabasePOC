@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +16,10 @@ namespace DatabasePOC
         public async Task<IEnumerable<Horario>> GetAllHorariosWithAllAsync()
         {
             return await Db.Horarios.AsNoTracking()
-                                    .Include(h => h.Disciplina)
-                                    .Include(h => h.Turma)
+                                    //.Include("Disciplina")
+                                    //.Include("Turma")
                                     .ToListAsync();
+                                    
         }
 
     }
