@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DatabasePOC.Dapper.Executor.Interface;
 using DatabasePOC.Dapper.Repository.Interface;
 using System;
 using System.Collections.Generic;
