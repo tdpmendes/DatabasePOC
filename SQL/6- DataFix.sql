@@ -1,4 +1,4 @@
-﻿USE DatabasePOC
+﻿USE EFPoc
 
 declare @operationId uniqueidentifier 
 set @operationId = newid();

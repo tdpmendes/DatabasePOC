@@ -21,11 +21,9 @@ CREATE TABLE [dbo].[Disciplinas](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Disciplina]  WITH CHECK ADD  CONSTRAINT [FK_Disciplina_Professor] FOREIGN KEY([professor_id])
-REFERENCES [dbo].[Professor] ([id])
+ALTER TABLE [dbo].[Disciplinas]  WITH CHECK ADD  CONSTRAINT [FK_Disciplina_Professor] FOREIGN KEY([professor_id])
+REFERENCES [dbo].[Professores] ([id])
 GO
 
-ALTER TABLE [dbo].[Disciplina] CHECK CONSTRAINT [FK_Disciplina_Professor]
+ALTER TABLE [dbo].[Disciplinas] CHECK CONSTRAINT [FK_Disciplina_Professor]
 GO
-
-

@@ -1,8 +1,7 @@
 ﻿using DatabasePOC.EF.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -46,13 +45,13 @@ namespace DatabasePOC
 
         public virtual async Task UpdateAsync(TEntity entity)
         {
-            DbSet.AddOrUpdate(entity);
+            DbSet.Update(entity);
             await SaveChangesAsync();
         }
 
         public virtual async Task DeleteAsync(int Id)
         {
-            DbSet.Remove(new TEntity { Id = Id });
+            //DbSet.Remove(new TEntity { Id = Id });
             await SaveChangesAsync();
 
         }

@@ -11,7 +11,7 @@ GO
 CREATE TABLE [dbo].[Alunos](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[turma_id] [bigint] NOT NULL,
-	[matrcula] [uniqueidentifier] NOT NULL,
+	[matricula] [uniqueidentifier] NOT NULL,
 	[nome] [varchar](150) NOT NULL,
 	[dataCriacao] [datetime] NOT NULL,
 	[operationId] [uniqueidentifier] NOT NULL,
@@ -24,11 +24,9 @@ CREATE TABLE [dbo].[Alunos](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Aluno]  WITH CHECK ADD  CONSTRAINT [FK_Aluno_Turma] FOREIGN KEY([turma_id])
-REFERENCES [dbo].[Turma] ([id])
+ALTER TABLE [dbo].[Alunos]  WITH CHECK ADD  CONSTRAINT [FK_Aluno_Turma] FOREIGN KEY([turma_id])
+REFERENCES [dbo].[Turmas] ([id])
 GO
 
-ALTER TABLE [dbo].[Aluno] CHECK CONSTRAINT [FK_Aluno_Turma]
+ALTER TABLE [dbo].[Alunos] CHECK CONSTRAINT [FK_Aluno_Turma]
 GO
-
-

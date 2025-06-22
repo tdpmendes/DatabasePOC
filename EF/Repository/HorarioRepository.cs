@@ -13,12 +13,12 @@ namespace DatabasePOC
         {
         }
 
-        public async Task<IEnumerable<Horario>> GetAllHorariosWithAllAsync()
+        public IEnumerable<Horario> GetAllHorariosWithAll()
         {
-            return await Db.Horarios.AsNoTracking()
-                                    //.Include("Disciplina")
-                                    //.Include("Turma")
-                                    .ToListAsync();
+            return Db.Horarios.AsNoTracking()
+                                    .Include("Disciplinas")
+                                    .Include("Turmas")
+                                    .ToList();
                                     
         }
 

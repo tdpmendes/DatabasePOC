@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DatabasePOC
@@ -11,11 +12,11 @@ namespace DatabasePOC
 
         }
 
-        public async Task<IEnumerable<Professor>> GetProfessoresWithDisciplinasAsync()
+        public IEnumerable<Professor> GetProfessoresWithDisciplinas()
         {
-            return await Db.Professores.AsNoTracking()
+            return Db.Professores.AsNoTracking()
                                        .Include("Disciplina")
-                                       .ToListAsync();
+                                       .ToList();
                                        
         }
     }

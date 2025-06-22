@@ -20,9 +20,9 @@ namespace DatabasePOC
             ProfessorRepository professores = new ProfessorRepository(context);
             HorarioRepository horarios = new HorarioRepository(context);
             
-            var all = horarios.GetAllHorariosWithAllAsync().Result;
-            var disciplinasP = disciplinas.GetDisciplinasWithProfessorAsync().Result;
-            var profsD = professores.GetProfessoresWithDisciplinasAsync().Result;
+            var all = horarios.GetAllHorariosWithAll();
+            var disciplinasP = disciplinas.GetDisciplinasWithProfessor();
+            var profsD = professores.GetProfessoresWithDisciplinas();
 
 
             //Execuções Dapper

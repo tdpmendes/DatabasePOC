@@ -25,18 +25,16 @@ CREATE TABLE [dbo].[Horarios](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Horario]  WITH CHECK ADD  CONSTRAINT [FK_Horario_Disciplina] FOREIGN KEY([disciplina_id])
-REFERENCES [dbo].[Disciplina] ([id])
+ALTER TABLE [dbo].[Horarios]  WITH CHECK ADD  CONSTRAINT [FK_Horario_Disciplina] FOREIGN KEY([disciplina_id])
+REFERENCES [dbo].[Disciplinas] ([id])
 GO
 
-ALTER TABLE [dbo].[Horario] CHECK CONSTRAINT [FK_Horario_Disciplina]
+ALTER TABLE [dbo].[Horarios] CHECK CONSTRAINT [FK_Horario_Disciplina]
 GO
 
-ALTER TABLE [dbo].[Horario]  WITH CHECK ADD  CONSTRAINT [FK_Horario_Turma] FOREIGN KEY([turma_id])
-REFERENCES [dbo].[Turma] ([id])
+ALTER TABLE [dbo].[Horarios]  WITH CHECK ADD  CONSTRAINT [FK_Horario_Turma] FOREIGN KEY([turma_id])
+REFERENCES [dbo].[Turmas] ([id])
 GO
 
-ALTER TABLE [dbo].[Horario] CHECK CONSTRAINT [FK_Horario_Turma]
+ALTER TABLE [dbo].[Horarios] CHECK CONSTRAINT [FK_Horario_Turma]
 GO
-
-

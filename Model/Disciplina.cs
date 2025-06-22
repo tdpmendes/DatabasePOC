@@ -11,5 +11,6 @@ namespace DatabasePOC
 
         [ForeignKey("ProfessorId")]
         public virtual Professor Professor { get; set; }
+        public ICollection<Professor> Professores { get; set; }
     }
 }
