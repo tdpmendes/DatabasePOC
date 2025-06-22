@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DatabasePOC
+namespace DatabasePOC.EF.Repository.Base
 {
     public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : EntityBase, new()
     {

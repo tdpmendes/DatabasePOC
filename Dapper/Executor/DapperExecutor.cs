@@ -1,10 +1,11 @@
 ﻿using Dapper;
+using DatabasePOC.Dapper.Executor.Interface;
 using System.Collections.Generic;
 using System.Data;
 
 namespace DatabasePOC.Dapper.Executor
 {
-    public class DapperExecutor
+    public class DapperExecutor : IDapperExecutor
     {
         public T QueryFirstOrDefault<T>(IDbConnection connection, string sql, object param = null)
         {

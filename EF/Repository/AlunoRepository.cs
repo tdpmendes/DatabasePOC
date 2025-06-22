@@ -1,4 +1,6 @@
-﻿namespace DatabasePOC
+﻿using DatabasePOC.EF.Repository.Base;
+
+namespace DatabasePOC
 {
     public class AlunoRepository : RepositoryBase<Aluno>
     {

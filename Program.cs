@@ -1,5 +1,7 @@
 ﻿using Dapper;
-using DatabasePOC;
+using DatabasePOC.Dapper.Executor;
+using DatabasePOC.Dapper.Repository;
+using DatabasePOC.EF.Repository;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -14,20 +16,22 @@ namespace DatabasePOC
             //Execuções EF
             DatabasePOCContext context = new DatabasePOCContext();
             
-            AlunoRepository alunos = new AlunoRepository(context);
-            TurmaRepository turmas = new TurmaRepository(context);
-            DisciplinaRepository disciplinas = new DisciplinaRepository(context);
-            ProfessorRepository professores = new ProfessorRepository(context);
-            HorarioRepository horarios = new HorarioRepository(context);
+            AlunoRepository alunosEF = new AlunoRepository(context);
+            TurmaRepository turmasEF = new TurmaRepository(context);
+            DisciplinaRepository disciplinasEF = new DisciplinaRepository(context);
+            ProfessorRepository professoresEF = new ProfessorRepository(context);
+            HorarioRepository horariosEF = new HorarioRepository(context);
             
-            var all = horarios.GetAllHorariosWithAll();
-            var disciplinasP = disciplinas.GetDisciplinasWithProfessor();
-            var profsD = professores.GetProfessoresWithDisciplinas();
+            var all = horariosEF.GetAllHorariosWithAll();
+            var disciplinasP = disciplinasEF.GetDisciplinasWithProfessor();
+            var profsD = professoresEF.GetProfessoresWithDisciplinas();
 
 
             //Execuções Dapper
-            //IDbConnection connection = new SqlConnection(Constants.ConnectionString);
-            //var result = connection.Query<Aluno>("Select * from alunos").ToList();
+            Dapper.Repository.AlunoRepository alunosDapper = 
+                new Dapper.Repository.AlunoRepository(Constants.ConnectionString, new DapperExecutor());
+
+            var aluno = alunosDapper.GetByNome("Adriano Borsato Cardoso");
 
          }
     }
